@@ -32,6 +32,9 @@ INSTRUCTIONS FOR RUNNING THE CODE
 
 //defining macros for size of hash table and key
 //to avoid hardcoding in program
+//the optimal size of hash table for murmur hashing
+//is 2 times the expected number of elements
+//here, I expect 200 elements and hence have set the size to 400
 #define size_of_hash_table 400
 #define size_of_key 200
 
