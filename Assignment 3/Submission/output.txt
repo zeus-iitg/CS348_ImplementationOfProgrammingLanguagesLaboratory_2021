@@ -1,0 +1,95 @@
+  LINE  TOKEN TYPE         TOKEN SPECIFIER
+  ----  ----------         ---------------
+     1       1    
+            22    ^STATS (HASH_INDEX: 54, LIST_INDEX: 0)
+     2       2    
+     3      22    ^SUM (HASH_INDEX: 250, LIST_INDEX: 0)
+            14    
+            22    ^SUMSQ (HASH_INDEX: 167, LIST_INDEX: 0)
+            14    
+            22    ^I (HASH_INDEX: 384, LIST_INDEX: 0)
+            14    
+            22    ^VALUE (HASH_INDEX: 197, LIST_INDEX: 0)
+            14    
+            22    ^MEAN (HASH_INDEX: 271, LIST_INDEX: 0)
+            14    
+            22    ^VARIANCE (HASH_INDEX: 129, LIST_INDEX: 0)
+            13    
+             6    
+     4       3    
+     5      22    ^SUM (HASH_INDEX: 250, LIST_INDEX: 0)
+            15    
+            23    #0 (HASH_INDEX: 23, LIST_INDEX: 0)
+            12    
+     6      22    ^SUMSQ (HASH_INDEX: 167, LIST_INDEX: 0)
+            15    
+            23    #0 (HASH_INDEX: 23, LIST_INDEX: 0)
+            12    
+     7       7    
+            22    ^I (HASH_INDEX: 384, LIST_INDEX: 0)
+            15    
+            23    #1 (HASH_INDEX: 318, LIST_INDEX: 0)
+            10    
+            23    #100 (HASH_INDEX: 366, LIST_INDEX: 0)
+            11    
+     8       3    
+     9       8    
+            20    
+            22    ^VALUE (HASH_INDEX: 197, LIST_INDEX: 0)
+            21    
+            12    
+    10      22    ^SUM (HASH_INDEX: 250, LIST_INDEX: 0)
+            15    
+            22    ^SUM (HASH_INDEX: 250, LIST_INDEX: 0)
+            16    
+            22    ^VALUE (HASH_INDEX: 197, LIST_INDEX: 0)
+            12    
+    11      22    ^SUMSQ (HASH_INDEX: 167, LIST_INDEX: 0)
+            15    
+            22    ^SUMSQ (HASH_INDEX: 167, LIST_INDEX: 0)
+            16    
+            22    ^VALUE (HASH_INDEX: 197, LIST_INDEX: 0)
+            18    
+            22    ^VALUE (HASH_INDEX: 197, LIST_INDEX: 0)
+    12       4    
+            12    
+    13      22    ^MEAN (HASH_INDEX: 271, LIST_INDEX: 0)
+            15    
+            22    ^SUM (HASH_INDEX: 250, LIST_INDEX: 0)
+            19    
+            23    #100 (HASH_INDEX: 366, LIST_INDEX: 0)
+            12    
+    14      22    ^VARIANCE (HASH_INDEX: 129, LIST_INDEX: 0)
+            15    
+            22    ^SUMSQ (HASH_INDEX: 167, LIST_INDEX: 0)
+            19    
+            23    #100 (HASH_INDEX: 366, LIST_INDEX: 0)
+            17    
+            22    ^MEAN (HASH_INDEX: 271, LIST_INDEX: 0)
+            18    
+            22    ^MEAN (HASH_INDEX: 271, LIST_INDEX: 0)
+            12    
+    15       9    
+            20    
+            22    ^MEAN (HASH_INDEX: 271, LIST_INDEX: 0)
+            14    
+            22    ^VARIANCE (HASH_INDEX: 129, LIST_INDEX: 0)
+            21    
+    16       5    
+
+      HASH TABLE
+      ----------
+(non-empty entries only)
+
+  INDEX   TOKEN TYPE   TOKEN SPECIFIER
+  -----   ----------   ---------------
+    23        23          #0
+    54        22          ^STATS
+   129        22          ^VARIANCE
+   167        22          ^SUMSQ
+   197        22          ^VALUE
+   250        22          ^SUM
+   271        22          ^MEAN
+   318        23          #1
+   366        23          #100
+   384        22          ^I
