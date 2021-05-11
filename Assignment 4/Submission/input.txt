@@ -1,0 +1,19 @@
+PROGRAM STATS
+VAR
+    SUM,SUMSQ,I,VALUE,MEAN,VARIANCE : INTEGER;
+    I, RRR_3: REAL;
+    IT: RAAAR
+BEGIN
+    SUM := RRR_3;
+    SUMSQ := RARRRR;
+    FOR I := 3.6 TO 100 DO
+        BEGIN
+            READ VALUE;
+            SUM := SUM + VLUE;
+            SUMSQ := SUMSQ + VALUE * VALUE
+        END;
+    MEAN := SUM DIV 100;
+    VARIANCE := SUMS DIV 100 - MEAN * MEAN;
+    WRITE(MEAN,VARIANCE)
+END
+

@@ -1,0 +1,62 @@
+000000 0      COPY      START     0                                                           
+000000 0                EXTDEF    BUFFER,BUFEND,LENGTH                                        
+000000 0                EXTREF    RDREC,WRREC                                                 
+000000 3      FIRST     STL       RETADR                                                      
+000003 4      CLOOP     +JSUB     RDREC                                                       
+000007 3                LDA       LENGTH                                                      
+00000A 3                COMP      #0                                                          
+00000D 3                JEQ       ENDFIL                                                      
+000010 4                +JSUB     WRREC                                                       
+000014 3                J         CLOOP                                                       
+000017 3      ENDFIL    LDA       =C'EOF'                                                     
+00001A 3                STA       BUFFER                                                      
+00001D 3                LDA       #3                                                          
+000020 3                STA       LENGTH                                                      
+000023 4                +JSUB     WRREC                                                       
+000027 3                J         @RETADR                                                     
+00002A 3      RETADR    RESW      1                                                           
+00002D 3      LENGTH    RESW      1                                                           
+000030 0                LTORG                                                                 
+000030 3      *         =C'EOF'                                                               
+000033 4096   BUFFER    RESB      4096                                                        
+001033 0      BUFEND    EQU       *                                                           
+001033 0      MAXLEN    EQU       BUFEND-BUFFER                                               
+
+000000 0      RDREC     CSECT                                                                 
+              .
+              .         SUBROUTINE TO READ RECORD INTO BUFFER
+              .
+000000 0                EXTREF    BUFFER,LENGTH,BUFEND                                        
+000000 2                CLEAR     X                                                           
+000002 2                CLEAR     A                                                           
+000004 2                CLEAR     S                                                           
+000006 3                LDT       MAXLEN                                                      
+000009 3      RLOOP     TD        INPUT                                                       
+00000C 3                JEQ       RLOOP                                                       
+00000F 3                RD        INPUT                                                       
+000012 2                COMPR     A,S                                                         
+000014 3                JEQ       EXIT                                                        
+000017 4                +STCH     BUFFER,X                                                    
+00001B 2                TIXR      T                                                           
+00001D 3                JLT       RLOOP                                                       
+000020 4      EXIT      +STX      LENGTH                                                      
+000024 3                RSUB                                                                  
+000027 1      INPUT     BYTE      X'F1'                                                       
+000028 3      MAXLEN    WORD      BUFEND-BUFFER                                               
+
+000000 0      WRREC     CSECT                                                                 
+              .
+              .         SUBROUTINE TO WRITE RECORD FROM BUFFER
+              .
+000000 0                EXTREF    LENGTH,BUFFER                                               
+000000 2                CLEAR     X                                                           
+000002 4                +LDT      LENGTH                                                      
+000006 3      WLOOP     TD        =X'05'                                                      
+000009 3                JEQ       WLOOP                                                       
+00000C 4                +LDCH     BUFFER,X                                                    
+000010 3                WD        =X'05'                                                      
+000013 2                TIXR      T                                                           
+000015 3                JLT       WLOOP                                                       
+000018 3                RSUB                                                                  
+00001B 0                END       FIRST                                                       
+00001B 1      *         =X'05'                                                                
